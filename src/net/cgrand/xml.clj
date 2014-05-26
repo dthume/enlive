@@ -7,10 +7,14 @@
 ;   You must not remove this notice, or any other, from this software.
 
 (ns net.cgrand.xml
-  (:require [clojure.zip :as z])
   (:import (org.xml.sax ContentHandler Attributes SAXException XMLReader)
            (org.xml.sax.ext DefaultHandler2)
            (javax.xml.parsers SAXParser SAXParserFactory)))
+
+(try
+  (require '[fast-zip.core :as z])
+  (catch Exception e
+    (require '[clojure.zip :as z])))
 
 (defstruct element :tag :attrs :content)
 
@@ -39,7 +43,7 @@
 
 (defn- merge-text-left [loc s]
   (or
-    (when-let [l (-> loc z/down z/rightmost)]
+    (when-let [l (some-> loc z/down z/rightmost)]
       (when (-> l z/node string?)
         (-> l (z/edit str s) z/up)))
     (-> loc (z/append-child s)))) 
