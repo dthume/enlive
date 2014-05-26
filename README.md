@@ -6,7 +6,7 @@ David Nolen wrote a [nice tutorial](http://github.com/swannodette/enlive-tutoria
 
 Another [tutorial](https://github.com/cgrand/enlive/wiki/Table-and-Layout-Tutorial,-Part-1:-The-Goal by Brian Marick) is by Brian Marick.
 
-There's a quickstart section in [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/webapps/templating-with-enlive/templating-with-enlive.asciidoc).
+There's a quickstart section in [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/07_webapps/7-11_enlive.asciidoc).
 
 ## Where do I get support?
 
@@ -14,7 +14,7 @@ On the [Enlive Google Group](http://groups.google.com/group/enlive-clj)
 
 ## Artifact
 
-All artifacts are published to [clojars](https://clojars.org/enlive). Latest version is `1.1.4`:
+All artifacts are published to [clojars](https://clojars.org/enlive). Latest version is `1.1.5`:
 
 ```
 [enlive "1.1.5"]
@@ -155,7 +155,7 @@ snippet whose output is serialized. Templates return a seq of strings to avoid
 building the whole string.
 
 Templates and snippets transform a source (specified as a path (to access
-resources on the classpath), a File, a Reader, an InputStream, an URI, an URL,
+resources on the classpath), a File, a Reader, an InputStream, a URI, a URL,
 an element or a seq of nodes).
 
 Next concept is `selectors`, which are used within snippets and
@@ -172,7 +172,7 @@ receive content obtained selector, and modify it in some way.
 
 If you want to go see the compiled version of the following steps all in
 one place, you can check out
-[https://github.com/ifesdjeen/enlive-ring](an exmaple Ring application)
+[an example Ring application](https://github.com/ifesdjeen/enlive-ring).
 
 First thing you need to start, is to define your first template:
 
